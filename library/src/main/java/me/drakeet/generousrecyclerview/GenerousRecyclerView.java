@@ -63,11 +63,11 @@ public class GenerousRecyclerView extends RecyclerView {
 
 
     /**
-     * @return mClipToPadding, if sdk_int < 21. else return getClipToPadding();
+     * @return false, if sdk_int < 21. else return getClipToPadding();
      */
     private boolean getClipToPaddingCompat() {
         if (Build.VERSION.SDK_INT < 21) {
-            return mClipToPadding;
+            return false;
         }
         else {
             return getClipToPadding();
