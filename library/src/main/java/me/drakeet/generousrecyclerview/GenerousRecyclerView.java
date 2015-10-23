@@ -1,6 +1,7 @@
 package me.drakeet.generousrecyclerview;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -50,11 +51,17 @@ public class GenerousRecyclerView extends RecyclerView {
 
 
     @Override public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (!mEating && !getClipToPadding() && mScrollY < getPaddingTop()
+        if (!mEating && !hasClipToPadding() && mScrollY < getPaddingTop()
                 && ev.getY() < getPaddingTop()) {
             return false;
-        } else {
+        }
+        else {
             return super.dispatchTouchEvent(ev);
         }
+    }
+
+
+    private boolean hasClipToPadding() {
+        return Build.VERSION.SDK_INT < 21 || getClipToPadding();
     }
 }
