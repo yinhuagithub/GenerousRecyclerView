@@ -53,8 +53,7 @@ public class GenerousRecyclerView extends RecyclerView {
         if (!mEating && !getClipToPadding() && mScrollY < getPaddingTop()
                 && ev.getY() < getPaddingTop()) {
             return false;
-        }
-        else {
+        } else {
             return super.dispatchTouchEvent(ev);
         }
     }
