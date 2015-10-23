@@ -51,7 +51,7 @@ public class GenerousRecyclerView extends RecyclerView {
 
 
     @Override public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (!mEating && !hasClipToPadding() && mScrollY < getPaddingTop()
+        if (!mEating && !getClipToPaddingCompat() && mScrollY < getPaddingTop()
                 && ev.getY() < getPaddingTop()) {
             return false;
         }
@@ -61,7 +61,7 @@ public class GenerousRecyclerView extends RecyclerView {
     }
 
 
-    private boolean hasClipToPadding() {
-        return Build.VERSION.SDK_INT < 21 || getClipToPadding();
+    private boolean getClipToPaddingCompat() {
+        return Build.VERSION.SDK_INT >= 21 && getClipToPadding();
     }
 }
