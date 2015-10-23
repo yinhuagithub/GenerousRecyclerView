@@ -14,6 +14,7 @@ public class GenerousRecyclerView extends RecyclerView {
 
     int mScrollY = 0;
     boolean mEating = false;
+    boolean mClipToPadding = true;
 
 
     public GenerousRecyclerView(Context context) {
@@ -62,9 +63,20 @@ public class GenerousRecyclerView extends RecyclerView {
 
 
     /**
-     * @return false, if sdk_int < 21. else return getClipToPadding();
+     * @return mClipToPadding, if sdk_int < 21. else return getClipToPadding();
      */
     private boolean getClipToPaddingCompat() {
-        return Build.VERSION.SDK_INT >= 21 && getClipToPadding();
+        if (Build.VERSION.SDK_INT < 21) {
+            return mClipToPadding;
+        }
+        else {
+            return getClipToPadding();
+        }
+    }
+
+
+    @Override public void setClipToPadding(boolean clipToPadding) {
+        super.setClipToPadding(clipToPadding);
+        mClipToPadding = clipToPadding;
     }
 }
