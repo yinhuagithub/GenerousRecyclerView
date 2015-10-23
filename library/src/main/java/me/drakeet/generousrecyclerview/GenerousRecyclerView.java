@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * todo: boolean text = attrs.getAttributeBooleanValue("http://schemas.android.com/apk/res/android", "clipToPadding", true);
+ * todo: boolean test = attrs.getAttributeBooleanValue("http://schemas.android.com/apk/res/android", "clipToPadding", true);
  * Created by drakeet(http://drakeet.me)
  * Date: 15/10/23 12:11
  */
