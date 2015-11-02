@@ -13,8 +13,8 @@ import android.view.MotionEvent;
  */
 public class GenerousRecyclerView extends RecyclerView {
 
-    int mScrollY = 0;
-    boolean mEating = false;
+    public int mScrollY = 0;
+    private boolean mEating = false;
 
     public GenerousRecyclerView(Context context) {
         this(context, null);
@@ -51,7 +51,7 @@ public class GenerousRecyclerView extends RecyclerView {
 
 
     @Override public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (!mEating && !getClipToPaddingCompat() && mScrollY < getPaddingTop()
+        if (!mEating && !getClipToPaddingCompat() && ev.getY() + mScrollY < getPaddingTop()
                 && ev.getY() < getPaddingTop()) {
             return false;
         }
