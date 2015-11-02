@@ -7,7 +7,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * todo: boolean test = attrs.getAttributeBooleanValue("http://schemas.android.com/apk/res/android", "clipToPadding", true);
+ * todo: boolean test = attrs.getAttributeBooleanValue("http://schemas.android.com/apk/res/android",
+ * "clipToPadding", true);
  * Created by drakeet(http://drakeet.me)
  * Date: 15/10/23 12:11
  */
@@ -15,6 +16,7 @@ public class GenerousRecyclerView extends RecyclerView {
 
     public int mScrollY = 0;
     private boolean mEating = false;
+
 
     public GenerousRecyclerView(Context context) {
         this(context, null);
